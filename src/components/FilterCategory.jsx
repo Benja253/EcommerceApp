@@ -1,16 +1,21 @@
 import React from 'react'
 import arrowHeadIcon from '../assets/icon-arrowhead.png'
+import iconFilter from '../assets/icon-filter.png'
 
 const FilterCategory = () => {
   return (
     <aside className='filter-price-category-container'>
+      <section className='icon-filter-container'>
+        <img className='img-icon-filter' src={iconFilter} alt="icon filter" />
+        <h3 className='filter-label'>Filters</h3>
+      </section>
       <section className='filter-price-container'>
         <header className='header-aside'>
           <h2 className='title-section-aside'>Price</h2>
-          <img 
-            className='arrowhead-aside' 
-            src={arrowHeadIcon} 
-            alt="arrowhead acordeon" 
+          <img
+            className='arrowhead-aside'
+            src={arrowHeadIcon}
+            alt="arrowhead acordeon"
           />
         </header>
         <hr className='aside-hr' />
