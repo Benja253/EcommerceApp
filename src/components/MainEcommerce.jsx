@@ -5,6 +5,16 @@ const MainEcommerce = () => {
   return (
     <main className='main-container'>
       <CardProducts />
+      <CardProducts />
+      <CardProducts />
+      <CardProducts />
+      <CardProducts />
+      <CardProducts />
+      <CardProducts />
+      <CardProducts />
+      <CardProducts />
+      <CardProducts />
+      
     </main>
   )
 }

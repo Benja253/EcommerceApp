@@ -5,15 +5,15 @@ const SearchBar = () => {
   return (
     <aside className='search-bar-container'>
       <form className='form-search-bar'>
-        <input 
+        <input
           className='input-search'
           type="text"
-          placeholder='What are you looking for?' 
+          placeholder='What are you looking for?'
         />
         <button className='btn-search'>
-          <img 
+          <img
             className='icon-lupa-search'
-            src={lupaIcon} 
+            src={lupaIcon}
             alt="lupa icon" />
         </button>
       </form>

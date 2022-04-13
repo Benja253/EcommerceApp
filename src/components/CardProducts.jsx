@@ -7,12 +7,12 @@ const CardProducts = () => {
       <header className='header-card'>
         <img
           className='img-product-card'
-          src="https://los40.com/los40/imagenes/2021/10/31/tecnologia/1635710472_737328_1635711008_gigante_normal.jpg"
+          src="https://media.ldlc.com/r1600/ld/products/00/05/26/91/LD0005269141_2.jpg"
           alt="imac" 
         />
       </header>
-      <h3 className='title-product'>Imac 2021 Intel i9</h3>
       <div className='body-card'>
+        <h3 className='title-product'>Imac 2021 Intel i9</h3>
         <div className='price-card'>
           <h4 className='label-price'>Price</h4>
           <p className='price-number'>3000</p>
