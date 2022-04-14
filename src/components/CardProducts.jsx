@@ -1,9 +1,17 @@
 import React from 'react'
 import addCartIcon from '../assets/icon-add-cart.png'
+import { useNavigate } from 'react-router-dom'
 
 const CardProducts = () => {
+
+  const navigateCardProduct = useNavigate()
+
+  const clickCard = () => {
+    navigateCardProduct('/product/1')
+  }
+
   return (
-    <article className="card">
+    <article className="card" onClick={clickCard}>
       <header className='header-card'>
         <img
           className='img-product-card'
