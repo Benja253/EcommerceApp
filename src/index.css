@@ -5,6 +5,7 @@ body {
   margin: 0;
   font-family: 'Lato', sans-serif;
   padding-top: 60px;
+  padding-bottom: 212px;
   position: relative;
   min-height: 100vh;
 }
@@ -180,7 +181,7 @@ input:focus {
 }
 /* ----- MainEcommerce ----- */
 .main-container{
-  padding: 20px;
+  padding: 20px 20px 50px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-content: center;
@@ -267,7 +268,6 @@ input:focus {
 @media screen and (min-width: 1000px) {
   body {
     padding-top: 85px;
-    padding-bottom: 212px;
   }
   .home {
     display: grid;
@@ -503,16 +503,75 @@ input:focus {
 }
 .similar-items-card-container {
   display: grid;
-  gap: 30px 10px;
+  gap: 30px 20px;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
 }
+/* ----- Purchases ----- */
+.section-purchases{
+  padding: 0 20px 50px;
+}
+.purchases-title{
+  margin: 15px 0 20px;
+}
+.purchases-list{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.purchases-per-date {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.date-title{
+  font-size: 15px;
+  padding: 10px;
+}
+.hr-purchases {
+  border: none;
+  border-top: 1px solid #ccc;
+}
+.products-purchases-list{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px;
+}
+.product-purchase-item{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+}
+.product-purchase-title{
+  font-size: 14px;
+  font-weight: 300;
+}
+.quantity-price-container-purchase{
+  display: flex;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: center;
+}
+.product-purchase-quantity{
+  width: 40px;
+  border: 1px solid #ccc;
+  padding: 3px 0;
+  text-align: center;
+  font-weight: 300;
+  font-size: 14px;
+}
+.product-purchase-price{
+  font-size: 14px;
+  font-weight: 500;
+}
+.product-purchase-price::before {
+  content: '$';
+  margin-right: 5px;
+}
 @media screen and (min-width: 720px) {
-  body {
-    padding-bottom: 0;
-  }
   .product-container {
     padding-bottom: 1px;
   }
@@ -537,6 +596,24 @@ input:focus {
   .similar-item-title{
     font-size: 22px;
   }
+  .date-title{
+    font-size: 18px;
+    padding-left: 30px;
+  }
+  .products-purchases-list {
+    gap: 40px;
+    padding: 30px;
+  }
+  .product-purchase-title {
+    font-size: 16px;
+  }
+  .quantity-price-container-purchase {
+    gap: 30px;
+  }
+  .product-purchase-quantity,
+  .product-purchase-price {
+    font-size: 16px;
+  }
 }
 @media screen and (min-width: 1000px) {
   .route-info{
@@ -553,5 +630,15 @@ input:focus {
     width: min(1030px, 100%);
     margin: 0 auto;
     padding: 0 40px;
+  }
+  .purchases-container{
+    width: min(1030px, 100%);
+    margin: 0 auto;
+  }
+  .section-purchases{
+    padding: 0 20px 50px;
+  }
+  .footer-principal {
+    bottom: 0;
   }
 }
