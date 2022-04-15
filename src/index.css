@@ -37,6 +37,7 @@ input:focus {
   position: fixed;
   top: 0;
   background: white;
+  z-index: 3;
 }
 .logo-title{
   color: #F95554;
@@ -82,6 +83,101 @@ input:focus {
 .icon-lupa-search{
   width: 22px;
   filter: invert(95%) sepia(94%) saturate(21%) hue-rotate(171deg) brightness(107%) contrast(100%);
+}
+/* ----- Cart ----- */
+.cart-container{
+  height: 100vh;
+  width: min(80vw, 350px);
+  padding: 85px 0 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 16px 0 #0003;
+  display: none;
+}
+.cart-title{
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+.product-cart-list{
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 20px 40px;
+}
+.product-cart-item-container{
+  display: grid;
+  grid-template-columns: 5fr 3fr 1fr;
+  row-gap: 20px;
+}
+.header-per-product-cart{
+  grid-column: span 2;
+}
+.brand-cart-item{
+  color: #ccc;
+  font-weight: 400;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.product-cart-item-title{
+  font-size: 13px;
+  font-weight: 500;
+}
+.img-delete-cart-container {
+  width: 25px;
+  filter: invert(59%) sepia(90%) saturate(3099%) hue-rotate(325deg) brightness(97%) contrast(101%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-cart-item-quantity{
+  width: 40px;
+  border: 1px solid #ccc;
+  padding: 2px 0;
+  font-size: 13px;
+  text-align: center;
+  align-self: center;
+}
+.price-container-product-item-cart{
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+.label-per-product-cart{
+  font-size: 12px;
+  color: #aaa;
+}
+.price-total-per-product-cart {
+  font-size: 14px;
+}
+.footer-cart-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 20px;
+  padding: 15px 20px 35px;
+}
+.label-cart-total {
+  font-size: 16px;
+}
+.total-price-cart{
+  font-size: 16px;
+  justify-self: flex-end;
+}
+.checkout-cart-btn{
+  grid-column: span 2;
+  padding: 12px;
+  color: white;
+  font-weight: 500;
+  background-color: #F95554;
+  border: none;
 }
 /* ----- FilterCategory ----- */
 .icon-filter-container{
@@ -284,7 +380,7 @@ input:focus {
     border-bottom: 1px solid #ccc9;
     left: 0;
     padding-left: 40px;
-    z-index: 2;
+    z-index: 3;
   }
   .logo-title{
     font-size: 2.1rem;
@@ -304,7 +400,6 @@ input:focus {
   .icon-filter-container{
     display: none;
   }
-  /* ----- FilterCategory ----- */
   .filter-price-category-container {
     grid-template-columns: 1/2;
     grid-row: 1 / 3;
@@ -362,9 +457,6 @@ input:focus {
 }
 /* ----- InfoProductCart ----- */
 /* ----- SliderInfo ----- */
-.header-home {
-  z-index: 1;
-}
 .slider-container-info {
   display: grid;
   grid-template-columns: 40px 1fr 40px;
