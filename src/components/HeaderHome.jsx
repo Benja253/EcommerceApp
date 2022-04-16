@@ -2,11 +2,14 @@ import React from 'react'
 import iconUser from '../assets/icon-user.png'
 import iconPurchases from '../assets/icon-purchases.png'
 import iconCart from '../assets/icon-cart.png'
+import { Link } from 'react-router-dom'
 
 const HeaderHome = () => {
   return (
     <header className='header-home'>
-      <h1 className='logo-title'>e-commerce</h1>
+      <Link to='/'>
+        <h1 className='logo-title'>e-commerce</h1>
+      </Link>
       <nav className='nav-bar'>
         <ul className='list-nav-bar'>
           <li className='item-nav-bar'>

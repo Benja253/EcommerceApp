@@ -1,7 +1,7 @@
 import React from 'react'
 import iconTrash from '../assets/icon-trash.png'
 
-const CartProducts = () => {
+const KartProducts = () => {
   return (
     <li className='product-cart-item-container'>
       <div className='header-per-product-cart'>
@@ -23,4 +23,4 @@ const CartProducts = () => {
   )
 }
 
-export default CartProducts
+export default KartProducts

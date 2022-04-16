@@ -3,12 +3,12 @@ import CartInfo from './CartInfo'
 import SelectImg from './SelectImg'
 import SliderInfo from './SilderInfo'
 
-const InfoProductCart = () => {
+const InfoProductCart = ({ data }) => {
   return (
     <div className='card-info'>
-      <SliderInfo />
-      <CartInfo />
-      <SelectImg />
+      <SliderInfo product={data?.product} />
+      <CartInfo product={data?.product} />
+      <SelectImg product={data?.product} />
     </div>
   )
 }

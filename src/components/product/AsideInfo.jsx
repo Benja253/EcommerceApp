@@ -1,7 +1,7 @@
 import React from 'react'
 import iconCircle from '../../assets/icon-circle.png'
 
-const AsideInfo = () => {
+const AsideInfo = ({data}) => {
   return (
     <aside className='route-info'>
       <h3 className='home-title'>Home</h3>
@@ -12,7 +12,7 @@ const AsideInfo = () => {
           alt="icon circle" 
         />
       </div>
-      <h3 className='route-selected'>Imac Intel 2021</h3>
+      <h3 className='route-selected'>{data?.product.title}</h3>
     </aside>
   )
 }

@@ -9,7 +9,7 @@ const ECommerceApp = () => {
     <HashRouter>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/product/:id' element={<Product />} />
+        <Route path='/product/:id/' element={<Product />} />
         <Route path='/purchases/' element={<Purchases />} />
       </Routes>
     </HashRouter>

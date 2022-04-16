@@ -26,6 +26,9 @@ hr {
 input:focus {
   outline: none;
 }
+a{
+  text-decoration: none;
+}
 /* ----- HeaderHome ----- */
 .header-home {
   height: 60px;
@@ -79,6 +82,10 @@ input:focus {
   width: 40px;
   border: none;
   background-color: #F95554;
+  cursor: pointer;
+}
+.btn-search:hover{
+  filter: brightness(1.05);
 }
 .icon-lupa-search{
   width: 22px;
@@ -97,7 +104,12 @@ input:focus {
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 16px 0 #0003;
-  display: none;
+  transform: translateX(100%);
+  transition: transform 500ms ease;
+}
+.cart-container-active {
+  transform: translateX(0);
+  transition: transform 500ms ease;
 }
 .cart-title{
   font-size: 18px;
@@ -228,9 +240,10 @@ input:focus {
   font-size: 16px;
 }
 .arrowhead-aside{
-  width: 12px;
+  width: 15px;
   transform: rotate(90deg);
   margin: 0 8px;
+  cursor: pointer;
 }
 .aside-hr{
   border-color: #ccc5;
@@ -267,6 +280,7 @@ input:focus {
   padding: 10px 15px;
   font-size: 15px;
   border-radius: 5px;
+  cursor: pointer;
 }
 .category-list {
   display: flex;
@@ -288,10 +302,33 @@ input:focus {
   border: 1px solid #ccc9;
   border-radius: 10px;
   overflow: hidden;
+  cursor: pointer;
 }
 .header-card{
   padding: 0 20px;
   border-bottom: 1px solid #ccc9;
+  width: 100%;
+  aspect-ratio: 1.4;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.img-product-card,
+.img-product-card-over{
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+.img-product-card-over{
+  position: absolute;
+  background-color: white;
+  transition: opacity 500ms ease;
+}
+.img-product-card-over:hover {
+  opacity: 0;
+  transition: opacity 500ms ease;
 }
 .body-card{
   padding: 20px;
@@ -323,6 +360,12 @@ input:focus {
   justify-self: end;
   border: none;
   background-color: #F95554;
+  cursor: pointer;
+  transition: transform 200ms ease;
+}
+.btn-card-container:hover{
+  transform: scale(1.07);
+  transition: transform 200ms ease;
 }
 .icon-add-cart{
   width: 60%;
@@ -356,6 +399,7 @@ input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .icon-social-media{
   width: 50%;
@@ -384,6 +428,7 @@ input:focus {
   }
   .logo-title{
     font-size: 2.1rem;
+    cursor: pointer;
   }
   .item-nav-bar{
     height: 85px;
@@ -392,6 +437,7 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
   /* ----- FilterCategory ----- */
   .search-bar-container{
@@ -427,11 +473,6 @@ input:focus {
   }
 }
 
-
-/* ----- Product ----- */
-.product-container{
-  padding-bottom: 212px;
-}
 /* ----- AsideInfo ----- */
 .route-info{
   display: flex;
@@ -471,6 +512,10 @@ input:focus {
   background-color: #F95554;
   border: none;
   border-radius: 50%;
+  cursor: pointer;
+}
+.btn-back-next-info:hover{
+  filter: brightness(1.05);
 }
 .arrowhead-back-info,
 .arrowhead-next-info{
@@ -486,9 +531,16 @@ input:focus {
 .img-container-info{
   width: 300%;
   display: grid;
+  align-items: center;
   grid-template-columns: repeat(3, calc(100%/3));
   transform: translateX(0);
   transition: transform 500ms ease;
+}
+.img-item {
+  width: 95%;
+  aspect-ratio: 0.9;
+  object-fit: contain;
+  place-self: center;
 }
 .slider-translate-2{
   transform: translateX(calc(-100%/3));
@@ -566,6 +618,7 @@ input:focus {
   align-items: center;
   font-size: 16px;
   gap: 10px;
+  cursor: pointer;
 }
 .img-add-cart-info{
   width: 20px;

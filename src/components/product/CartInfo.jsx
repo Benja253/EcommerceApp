@@ -1,25 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import iconAddCart from '../../assets/icon-add-cart.png'
 
-const CartInfo = () => {
+const CartInfo = ({product}) => {
+
+  const [quantity, setQuatity] = useState(1)
+  
+  const counterPlus = () => setQuatity(quantity + 1)
+
+  const counterMinus = () => {
+    if(quantity !== 1) {
+      setQuatity(quantity - 1)
+    }
+  }
+
   return (
     <article className='cart-info-container'>
-      <h2 className='name-product-info'>Imac Intel 2021</h2>
-      <p className='product-description-info'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima eius adipisci ullam distinctio, cumque voluptate aperiam, quis cupiditate odio delectus nihil at omnis quibusdam quos sint! Quaerat dolore debitis tenetur!
-        Veritatis debitis est sed rerum amet vero aperiam harum neque libero ea dolor, ad nulla, doloremque et. Ad, natus. Nostrum neque nisi fuga impedit aliquid quibusdam labore unde iusto autem.
-      </p>
+      <h2 className='name-product-info'>{product?.title}</h2>
+      <p className='product-description-info'>{product?.description}</p>
       <footer className='footer-cart-info'>
         <div className='price-container-info'>
           <h3 className='price-quantity-label'>Price</h3>
-          <p className='price-info'>850</p>
+          <p className='price-info'>{product?.price}</p>
         </div>
         <div className='quantity-container-info'>
           <h3 className='price-quantity-label'>Quantity</h3>
           <div className='counter-cant-container'>
-            <button className='minus-plus-counter'>-</button>
-            <div className='counter-info'>1</div>
-            <button className='minus-plus-counter'>+</button>
+            <button className='minus-plus-counter' onClick={counterMinus}>-</button>
+            <div className='counter-info'>{quantity}</div>
+            <button className='minus-plus-counter' onClick={counterPlus}>+</button>
           </div>
         </div>
         <button className='button-add-cart-info'>
