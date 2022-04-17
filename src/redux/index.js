@@ -4,7 +4,9 @@ const INITIAL_STATE = {
   products: null,
   productTarget: null,
   categories: null,
-  productsPerCategory: null
+  productsPerCategory: null,
+  filterCategory: 'all-categories',
+  cart: []
 }
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -31,6 +33,18 @@ const reducer = (state = INITIAL_STATE, action) => {
           return {
             ...state,
             productsPerCategory: action.payload
+          }
+
+        case actions.setFilterCategory:
+          return {
+            ...state,
+            filterCategory: action.payload
+          }
+
+        case actions.setCart:
+          return {
+            ...state,
+            cart: action.payload
           }
 
         default:

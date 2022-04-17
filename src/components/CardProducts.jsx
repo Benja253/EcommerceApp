@@ -1,14 +1,27 @@
 import React from 'react'
 import addCartIcon from '../assets/icon-add-cart.png'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
 const CardProducts = ({product}) => {
 
   const navigateCardProduct = useNavigate()
+  const dispatch = useDispatch()
+  
+  console.log(product)
 
-  const clickCard = () => {
-    navigateCardProduct(`/product/${product.id}/`)
+  const clickCard = e => {
+    if(!e.target.classList.contains('btn-card-container') && !e.target.classList.contains('icon-add-cart')){
+      navigateCardProduct(`/product/${product.id}/`)
+    } else {
+      dispatch({
+        type: 'SET_CART',
+        payload: [...cart, product.title]
+      })
+    }
   }
+  // const cart = useSelector(state => state.cart)
+  // console.log(cart)
 
   return (
     <article className="card" onClick={clickCard}>

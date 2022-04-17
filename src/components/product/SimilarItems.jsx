@@ -1,35 +1,25 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getCategoriesThunk, getProductsPerCategoryThunk } from '../../redux/actions'
+import { getProductsPerCategoryThunk } from '../../redux/actions'
 import CardProducts from '../CardProducts'
 
 const SimilarItems = ({data}) => {
-  console.log(data)
-
-  const dispatch = useDispatch()
-
-  useEffect(() => {
-    dispatch(getCategoriesThunk())
-  },[dispatch])
 
   const categories = useSelector(state => state.categories)
+  const dispatch = useDispatch()
 
-  console.log(categories)
-
-  let filterCategory
+  let filterCategoryId
   if(categories && data) {
-    filterCategory = categories?.data.categories.filter(category => category.name === data.product.category)[0].id
+    filterCategoryId = categories?.data.categories.filter(category => category.name === data.product.category)[0].id
   }
 
   useEffect(() => {
-    if(filterCategory) {
-      dispatch(getProductsPerCategoryThunk(filterCategory))
+    if(filterCategoryId) {
+      dispatch(getProductsPerCategoryThunk(filterCategoryId))
     }
-  },[dispatch, filterCategory])
+  },[dispatch, filterCategoryId])
 
   const productsPerCategory = useSelector(state => state.productsPerCategory)
-
-  console.log(productsPerCategory)
 
   return (
     <section className='similar-item-container'>

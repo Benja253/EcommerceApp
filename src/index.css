@@ -199,6 +199,7 @@ a{
   justify-content: end;
   align-items: center;
   padding: 0 20px;
+  cursor: pointer;
 }
 .img-icon-filter{
   filter: invert(84%) sepia(18%) saturate(0%) hue-rotate(276deg) brightness(93%) contrast(96%);
@@ -212,18 +213,23 @@ a{
   width: min(320px, 100%);
   background-color: white;
   box-shadow: -2px 0 10px 0 #0005;
-  padding: 45px 10px;
+  padding: 95px 10px 45px;
   position: fixed;
   height: 100vh;
-  top: 85px;
+  top: 0;
   right: 0;
   z-index: 1;
-  display: none;
+  transform: translateX(104%);
+  transition: transform 500ms ease;
+}
+.filter-container-sections-show {
+  transform: translateX(0);
+  transition: transform 500ms ease;
 }
 .equis-filter{
   width: 12px;
   position: absolute;
-  top: 10px;
+  top: 70px;
   right: 15px;
   cursor: pointer;
 }
@@ -288,6 +294,13 @@ a{
   gap: 10px;
   padding: 0 10px;
   color: #0009;
+}
+.category-item {
+  cursor: pointer;
+}
+.category-item__active {
+  background-color: #F95554;
+  color: white;
 }
 /* ----- MainEcommerce ----- */
 .main-container{
@@ -484,6 +497,12 @@ a{
 .home-title{
   font-size: 15px;
   font-weight: 300;
+  cursor: pointer;
+  transition: transform 100ms ease;
+}
+.home-title:hover{
+  transform: scale(1.1);
+  transition: transform 100ms ease;
 }
 .icon-circle-container{
   width: 6px;
@@ -595,6 +614,7 @@ a{
   border: 1px solid #ccc;
   background-color: transparent;
   color: #888;
+  cursor: pointer;
 }
 .counter-info{
   width: 40px;
@@ -765,6 +785,12 @@ a{
     padding: 0 40px;
     width: min(1030px, 100%);
     margin: 20px auto;
+  }
+  .filter-container-sections {
+    transform: translate(0);
+  }
+  .cart-container{
+    padding-top: 110px;
   }
   .card-info {
     padding: 20px 40px;

@@ -1,7 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import KartProducts from './KartProducts'
 
 const Cart = () => {
+
+  const cart =  useSelector(state => state.cart)
+
   return (
     <article className='cart-container'>
       <h2 className='cart-title'>Carrito de compras</h2>
