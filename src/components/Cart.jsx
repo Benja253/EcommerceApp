@@ -4,7 +4,7 @@ import KartProducts from './KartProducts'
 
 const Cart = () => {
 
-  const cart =  useSelector(state => state.cart)
+  const cart = useSelector(state => state.cart)
 
   let totalPrice = 0
   for (let i = 0; i < cart.length; i++) {

@@ -1,16 +1,43 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import iconAddCart from '../../assets/icon-add-cart.png'
 
 const CartInfo = ({product}) => {
 
-  const [quantity, setQuatity] = useState(1)
+  const [quantity, setQuantity] = useState(1)
+  const cart = useSelector(state => state.cart)
+  const dispatch = useDispatch()
   
-  const counterPlus = () => setQuatity(quantity + 1)
+  const counterPlus = () => setQuantity(quantity + 1)
 
   const counterMinus = () => {
     if(quantity !== 1) {
-      setQuatity(quantity - 1)
+      setQuantity(quantity - 1)
     }
+  }
+
+  const clickAddCart = () => {
+    const arrayCart = [...cart]
+      if(arrayCart.some(e => e?.product.title === product.title)) {
+        const index = arrayCart.findIndex(e => e.product.title === product.title)
+        arrayCart.splice(index, 1, {
+          product,
+          cant: quantity
+        })
+        dispatch({
+          type: 'SET_CART',
+          payload: arrayCart
+        })
+      } else {
+        dispatch({
+          type: 'SET_CART',
+          payload: [...cart, {
+            product,
+            cant: quantity
+          }]
+        })
+      }
+      setQuantity(1)
   }
 
   return (
@@ -30,12 +57,12 @@ const CartInfo = ({product}) => {
             <button className='minus-plus-counter' onClick={counterPlus}>+</button>
           </div>
         </div>
-        <button className='button-add-cart-info'>
-          Add to cart 
+        <button className='button-add-cart-info' onClick={clickAddCart}>
+          Add to cart
           <img
             className='img-add-cart-info'
             src={iconAddCart}
-            alt="icon add cart" 
+            alt="icon add cart"
           />
         </button>
       </footer>
