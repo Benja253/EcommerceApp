@@ -149,6 +149,7 @@ a{
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .product-cart-item-quantity{
   width: 40px;
@@ -170,6 +171,10 @@ a{
 .price-total-per-product-cart {
   font-size: 14px;
 }
+.price-total-per-product-cart::before {
+  content: '$';
+  margin-right: 5px;
+}
 .footer-cart-container{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -182,6 +187,10 @@ a{
 .total-price-cart{
   font-size: 16px;
   justify-self: flex-end;
+}
+.total-price-cart::before {
+  content: '$';
+  margin-right: 8px;
 }
 .checkout-cart-btn{
   grid-column: span 2;

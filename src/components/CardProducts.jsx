@@ -7,34 +7,47 @@ const CardProducts = ({product}) => {
 
   const navigateCardProduct = useNavigate()
   const dispatch = useDispatch()
-  
-  console.log(product)
+  const cart = useSelector(state => state.cart)
 
   const clickCard = e => {
     if(!e.target.classList.contains('btn-card-container') && !e.target.classList.contains('icon-add-cart')){
       navigateCardProduct(`/product/${product.id}/`)
     } else {
-      dispatch({
-        type: 'SET_CART',
-        payload: [...cart, product.title]
-      })
+      const arrayCart = [...cart]
+      if(arrayCart.some(e => e?.product.title === product.title)) {
+        const index = arrayCart.findIndex(e => e.product.title === product.title)
+        arrayCart.splice(index, 1, {
+          product,
+          cant: cart[index].cant + 1
+        })
+        dispatch({
+          type: 'SET_CART',
+          payload: arrayCart
+        })
+      } else {
+        dispatch({
+          type: 'SET_CART',
+          payload: [...cart, {
+            product,
+            cant: 1
+          }]
+        })
+      }
     }
   }
-  // const cart = useSelector(state => state.cart)
-  // console.log(cart)
-
+  
   return (
     <article className="card" onClick={clickCard}>
       <header className='header-card'>
         <img
           className='img-product-card'
           src={product && product.productImgs[1]}
-          alt="imac" 
+          alt="imac"
         />
         <img
           className='img-product-card-over'
           src={product && product.productImgs[0]}
-          alt="imac" 
+          alt="imac"
         />
       </header>
       <div className='body-card'>

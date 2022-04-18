@@ -9,7 +9,6 @@ const MainEcommerce = () => {
   const dispatch = useDispatch();
   const products = useSelector(state => state.products)
   const filterCategory = useSelector(state => state.filterCategory)
-  console.log(filterCategory)
 
   useEffect(() => {
     if(filterCategory === 'all-categories'){
